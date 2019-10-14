@@ -7,9 +7,11 @@
 #Much of what you see here was learned from the books "Python Crash Course" and "Automate the Boring stuff with Python"
 #take note of the tic mark comments that give you sub instructions.
 
+import wmi
+import os
+import ctypes
 
-message = "Присоединенный к 192.168.45.6..." #Connecting to 192.168.45.6...
-print(message)
+print("Присоединенный к 192.168.45.6...")#Connecting to 192.168.45.6...
 
 def greet_user(username):
     #Здравствуйте
@@ -17,13 +19,9 @@ def greet_user(username):
 
 greet_user('sdejulio')
 
-message2 = "Перевод файлов" #Translating files
-print(message2)
+print("Перевод файлов")
 
 #Import goodies
-import wmi
-
-import os
 
 
 #kill explorer.exe
@@ -32,8 +30,6 @@ for process in wmi.WMI().Win32_Process():
         os.system('c:\windows\system32\cmd.exe /c c:/windows/system32/taskkill.exe /F /IM explorer.exe')
 
 #set desktop wallpaper to built in black image
-
-import ctypes
 
 SPI_SETDESKWALLPAPER = 20 # According to http://support.microsoft.com/default.aspx?scid=97142
 
@@ -237,4 +233,3 @@ root.mainloop()
 
 
 root.mainloop()
-
